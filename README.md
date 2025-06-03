@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+CEFR Quiz Generator
 
-## Getting Started
+A Next.js app that generates CEFR English quizzes dynamically using a language model API.
 
-First, run the development server:
+Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Select CEFR levels (A1 to C2)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Generate quizzes by calling an API endpoint
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Uses a backend API route to fetch quiz content from an AI model (DeepSeek or Groq)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Styled with Tailwind CSS
 
-## Learn More
+Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Node.js (v16+ recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm or yarn
 
-## Deploy on Vercel
+API key for the language model service (DeepSeek or Groq)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clone the repositorygit clone https://github.com/abdessamed122/cefr-quiz.gitcd cefr-quiz
+
+Install dependenciesnpm install(or yarn install)
+
+Create a .env.local file in the root directory with the following content:DEEPSEEK_API_KEY=your_deepseek_or_groq_api_key_here
+
+Run the development servernpm run dev(or yarn dev)
+
+Open [http://localhost:3000](https://cefr-quiz-88fq.vercel.app/) to see the app.
+
+Project Structure
+
+pages/
+
+index.tsx — main page with quiz generator UI
+
+api/generate-quiz.ts — backend API route calling the language model API
+
+utils/deepseek.ts — utility to call the DeepSeek or Groq API
+
+styles/globals.css — global styles (Tailwind CSS)
+
+Deployment
+
+The app can be deployed on platforms like Vercel.
+
+Make sure to add the environment variable (DEEPSEEK_API_KEY) in your deployment settings.
+
+Notes
+
+The project uses TypeScript.
+
+Tailwind CSS is used for styling.
+
+Make sure your API key has enough balance to avoid errors.
+
+License
+
+MIT License © Abdessamed Ouahabi
+
