@@ -7,8 +7,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { level } = JSON.parse(req.body);
     const quiz = await generateQuiz(level);
     res.status(200).json({ quiz });
-  } catch (err: any) {
-    console.error('API Error:', err.message);
-    res.status(500).json({ error: 'Failed to generate quiz' });
-  }
+  } catch (err: unknown) {
+  console.error('API Error:', err);
+  res.status(500).json({ error: 'Failed to generate quiz' });
+}
+
 }
