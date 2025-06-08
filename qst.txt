@@ -1,0 +1,287 @@
+[
+  {
+    "id": 1,
+    "question": "What is your name?",
+    "options": ["My name is John.", "I am a teacher.", "I like reading.", "I am from London."],
+    "answer": "My name is John.",
+    "level": "A1"
+  },
+  {
+    "id": 2,
+    "question": "What do you do?",
+    "options": ["I am a student.", "I like playing football.", "I am from Paris.", "I am 25 years old."],
+    "answer": "I am a student.",
+    "level": "A1"
+  },
+  {
+    "id": 3,
+    "question": "Where are you from?",
+    "options": ["I am from London.", "I like reading books.", "I am a teacher.", "I am 30 years old."],
+    "answer": "I am from London.",
+    "level": "A1"
+  },
+  {
+    "id": 4,
+    "question": "What do you like doing?",
+    "options": ["I like playing football.", "I am a student.", "I am from Paris.", "I like reading books."],
+    "answer": "I like playing football.",
+    "level": "A1"
+  },
+  {
+    "id": 5,
+    "question": "What is your favourite food?",
+    "options": ["I like pizza.", "I am a teacher.", "I am from London.", "I like reading books."],
+    "answer": "I like pizza.",
+    "level": "A2"
+  },
+  {
+    "id": 6,
+    "question": "What do you do in your free time?",
+    "options": ["I like playing football.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I like playing football.",
+    "level": "A2"
+  },
+  {
+    "id": 7,
+    "question": "What is your daily routine?",
+    "options": ["I wake up at 7 am.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I wake up at 7 am.",
+    "level": "A2"
+  },
+  {
+    "id": 8,
+    "question": "What do you think about the weather?",
+    "options": ["I like sunny weather.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I like sunny weather.",
+    "level": "A2"
+  },
+  {
+    "id": 9,
+    "question": "What are your strengths and weaknesses?",
+    "options": ["I am good at maths.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I am good at maths.",
+    "level": "B1"
+  },
+  {
+    "id": 10,
+    "question": "What are your goals and ambitions?",
+    "options": ["I want to be a doctor.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I want to be a doctor.",
+    "level": "B1"
+  },
+  {
+    "id": 11,
+    "question": "What do you think about technology?",
+    "options": ["I think it's useful.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I think it's useful.",
+    "level": "B1"
+  },
+  {
+    "id": 12,
+    "question": "What do you think about education?",
+    "options": ["I think it's important.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I think it's important.",
+    "level": "B1"
+  },
+  {
+    "id": 13,
+    "question": "What are the advantages and disadvantages of social media?",
+    "options": ["It's good for communication.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "It's good for communication.",
+    "level": "B2"
+  },
+  {
+    "id": 14,
+    "question": "What do you think about environmental issues?",
+    "options": ["I think we should recycle.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I think we should recycle.",
+    "level": "B2"
+  },
+  {
+    "id": 15,
+    "question": "What do you think about cultural diversity?",
+    "options": ["I think it's enriching.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "I think it's enriching.",
+    "level": "B2"
+  },
+  {
+    "id": 16,
+    "question": "What are the characteristics of a good leader?",
+    "options": ["They are charismatic.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "They are charismatic.",
+    "level": "C1"
+  },
+  {
+    "id": 17,
+    "question": "What are the advantages and disadvantages of globalization?",
+    "options": ["It increases economic growth.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "It increases economic growth.",
+    "level": "C1"
+  },
+  {
+    "id": 18,
+    "question": "What do you think about the impact of technology on society?",
+    "options": ["It's changing the way we live.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "It's changing the way we live.",
+    "level": "C1"
+  },
+  {
+    "id": 19,
+    "question": "What are the key features of a successful business?",
+    "options": ["It has a good marketing strategy.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "It has a good marketing strategy.",
+    "level": "C2"
+  },
+  {
+    "id": 20,
+    "question": "What do you think about the role of government in society?",
+    "options": ["It should provide public services.", "I am a student.", "I like reading books.", "I am a teacher."],
+    "answer": "It should provide public services.",
+    "level": "C2"
+  }
+]
+0.1
+-----------
+0.9
+[
+  {
+    "id": 1,
+    "question": "What is your name?",
+    "options": ["My name is John", "I'm 25 years old", "Where are you from?", "I don't understand"],
+    "answer": "My name is John",
+    "level": "A1"
+  },
+  {
+    "id": 2,
+    "question": "How often do you exercise?",
+    "options": ["I exercise every day", "I don't like sports", "What is exercise?", "I'm a doctor"],
+    "answer": "I exercise every day",
+    "level": "A2"
+  },
+  {
+    "id": 3,
+    "question": "What is the capital of France?",
+    "options": ["Paris", "London", "Berlin", "Rome"],
+    "answer": "Paris",
+    "level": "B1"
+  },
+  {
+    "id": 4,
+    "question": "What is the meaning of 'to take a break'?",
+    "options": ["to start working", "to stop working for a while", "to have lunch", "to finish a project"],
+    "answer": "to stop working for a while",
+    "level": "B2"
+  },
+  {
+    "id": 5,
+    "question": "What is the main idea of the text?",
+    "options": ["The writer likes summer", "The writer dislikes summer", "The writer is neutral about summer", "The text doesn't mention summer"],
+    "answer": "The writer likes summer",
+    "level": "C1"
+  },
+  {
+    "id": 6,
+    "question": "What is the tone of the text?",
+    "options": ["formal", "informal", "sarcasm", "neutral"],
+    "answer": "formal",
+    "level": "C2"
+  },
+  {
+    "id": 7,
+    "question": "What time is it?",
+    "options": ["It's 3 o'clock", "It's 5 o'clock", "What is time?", "I don't have a watch"],
+    "answer": "It's 3 o'clock",
+    "level": "A1"
+  },
+  {
+    "id": 8,
+    "question": "How do you get to the airport?",
+    "options": ["By taxi", "By bus", "On foot", "By bike"],
+    "answer": "By taxi",
+    "level": "A2"
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between 'a' and 'an'?",
+    "options": ["'a' is for plural nouns", "'an' is for singular nouns", "'a' is for singular nouns", "'an' is for plural nouns"],
+    "answer": "'a' is for singular nouns",
+    "level": "B1"
+  },
+  {
+    "id": 10,
+    "question": "What is the meaning of 'to get along well?",
+    "options": ["to fight", "to be together", "to have a good relationship", "to be married"],
+    "answer": "to have a good relationship",
+    "level": "B2"
+  },
+  {
+    "id": 11,
+    "question": "What is the author's purpose in the text?",
+    "options": ["to persuade the reader", "to inform the reader", "to entertain the reader", "to confuse the reader"],
+    "answer": "to inform the reader",
+    "level": "C1"
+  },
+  {
+    "id": 12,
+    "question": "What is the theme of the story?",
+    "options": ["love", "friendship", "war", "freedom"],
+    "answer": "friendship",
+    "level": "C2"
+  },
+  {
+    "id": 13,
+    "question": "What is your favorite food?",
+    "options": ["pizza", "sushi", "Rice is my favorite", "I don't like food"],
+    "answer": "pizza",
+    "level": "A1"
+  },
+  {
+    "id": 14,
+    "question": "How do you usually spend your free time?",
+    "options": ["By reading books", "By watching TV", "By playing video games", "By sleeping"],
+    "answer": "By reading books",
+    "level": "A2"
+  },
+  {
+    "id": 15,
+    "question": "What is the main idea of the graph?",
+    "options": ["The sales are increasing", "The sales are decreasing", "The sales are stable", "The graph doesn't show sales"],
+    "answer": "The sales are increasing",
+    "level": "B1"
+  },
+  {
+    "id": 16,
+    "question": "What is the meaning of 'to be on time'?",
+    "options": ["to be late", "to be early", "to be on schedule", "to be absent"],
+    "answer": "to be on schedule",
+    "level": 2
+  },
+  {
+    "id": 17,
+    "question": "What is the purpose of the text?",
+    "options": ["to persuade the reader", "to inform the reader", "to entertain the reader", "to analyze the reader"],
+    "answer": "to inform the reader",
+    "level": "C1"
+  },
+  {
+    "id": 18,
+    "question": "What is the tone of the author in the text?",
+    "options": ["humorous", "serious", "angry", "sarcastic"],
+    "answer": "serious",
+    "level": "C2"
+  },
+  {
+    "id": 19,
+    "question": "What is the weather like today?",
+    "options": ["It's sunny", "It's cloudy", "I don't know", "I don't care"],
+    "answer": "It's sunny",
+    "level": "A1"
+  },
+  {
+    "id": 20,
+    "question": "What do you do if you are lost?",
+    "options": ["I ask for directions", "I use a map", "I call the police", "I start crying"],
+    "answer": "I ask for directions",
+    "level": "A2"
+  }
+]
