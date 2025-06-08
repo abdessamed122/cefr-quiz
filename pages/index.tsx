@@ -12,12 +12,26 @@ export default function QuizPage() {
   const introText = Text;
 
   // جلب الأسئلة من API
+  // useEffect(() => {
+  //   fetch('/api/generate-quiz')
+  //     .then((res) => res.json())
+  //     .then((data) => setQuestions(JSON.parse(data.quiz)))      
+  //     .catch(console.error);
+  // }, []);
   useEffect(() => {
-    fetch('/api/generate-quiz')
-      .then((res) => res.json())
-      .then((data) => setQuestions(JSON.parse(data.quiz)))
-      .catch(console.error);
-  }, []);
+  fetch('/api/generate-quiz')
+    .then((res) => res.json())
+    .then((data) => {
+      console.log('Raw quiz data:', data.quiz);
+
+      // Safely parse only if necessary
+      const parsedQuiz = typeof data.quiz === 'string' ? JSON.parse(data.quiz) : data.quiz;
+
+      setQuestions(parsedQuiz);
+    })
+    .catch(console.error);
+}, []);
+
 
   // حفظ إجابة المستخدم
   const handleAnswer = (qid: number, option: string) => {
