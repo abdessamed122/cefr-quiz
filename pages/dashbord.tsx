@@ -16,10 +16,12 @@ export default function AdminDashboard() {
     answer: '',
     level: '',
   });
-  const [results, setResults] = useState<{ email: string; score: number; level: string }[]>([
-    { email: 'user1@example.com', score: 8, level: 'B1' },
-    { email: 'user2@example.com', score: 6, level: 'A2' },
-  ]);
+  const [results] = useState<{ email: string; score: number; level: string }[]>(
+    [
+      { email: 'user1@example.com', score: 8, level: 'B1' },
+      { email: 'user2@example.com', score: 6, level: 'A2' },
+    ],
+  );
 
   const handleQuestionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewQuestion({ ...newQuestion, question: e.target.value });
