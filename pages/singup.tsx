@@ -1,120 +1,3 @@
-// 'use client';
-
-// import { useState } from 'react';
-// import { useRouter } from 'next/navigation';
-
-// export default function RegisterPage() {
-//   const router = useRouter();
-
-//   const [firstName, setFirstName] = useState('');
-//   const [lastName, setLastName] = useState('');
-//   const [birthDate, setBirthDate] = useState('');
-//   const [birthPlace, setBirthPlace] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [phone, setPhone] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleRegister = () => {
-//     if (
-//       !firstName ||
-//       !lastName ||
-//       !birthDate ||
-//       !birthPlace ||
-//       !email ||
-//       !phone ||
-//       !password
-//     ) {
-//       alert('Please fill all the fields.');
-//       return;
-//     }
-
-//     // Add your registration logic here (API call, validation, etc.)
-//     console.log({
-//       firstName,
-//       lastName,
-//       birthDate,
-//       birthPlace,
-//       email,
-//       phone,
-//       password,
-//     });
-
-//     // After successful registration, redirect to login or quiz page
-//     router.push('/login');
-//   };
-
-//   return (
-//     <main className="min-h-screen flex items-center justify-center bg-gray-100">
-//       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-//         <h1 className="text-2xl font-bold text-center mb-6">Register</h1>
-
-//         <input
-//           type="text"
-//           placeholder="First Name"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={firstName}
-//           onChange={(e) => setFirstName(e.target.value)}
-//         />
-
-//         <input
-//           type="text"
-//           placeholder="Last Name"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={lastName}
-//           onChange={(e) => setLastName(e.target.value)}
-//         />
-
-//         <input
-//           type="date"
-//           placeholder="Birth Date"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={birthDate}
-//           onChange={(e) => setBirthDate(e.target.value)}
-//         />
-
-//         <input
-//           type="text"
-//           placeholder="Birth Place"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={birthPlace}
-//           onChange={(e) => setBirthPlace(e.target.value)}
-//         />
-
-//         <input
-//           type="email"
-//           placeholder="Email"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//         />
-
-//         <input
-//           type="tel"
-//           placeholder="Phone Number"
-//           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={phone}
-//           onChange={(e) => setPhone(e.target.value)}
-//         />
-
-//         <input
-//           type="password"
-//           placeholder="Password"
-//           className="w-full p-3 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-
-//         <button
-//           onClick={handleRegister}
-//           className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
-//         >
-//           Register
-//         </button>
-//       </div>
-//     </main>
-//   );
-// }
-// 7777777777777
 'use client';
 
 import { useState } from 'react';
@@ -192,7 +75,7 @@ export default function RegisterPage() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (
       !firstName ||
       !lastName ||
@@ -217,7 +100,28 @@ export default function RegisterPage() {
       password,
     });
 
-    router.push('/login');
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        birthDate,
+        birthPlace,
+        email,
+        phone,
+        password,
+      }),
+    });
+
+    if (res.ok) {
+      router.push('/login');
+    } else {
+      const errorData = await res.json();
+      alert(errorData.error || 'Registration failed');
+    }
   };
 
   return (

@@ -9,17 +9,29 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    if (!email || !password) {
-      alert('Please enter both email and password.');
-      return;
+ const handleLogin = async () => {
+  if (!email || !password) {
+    alert('Please enter both email and password.');
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (res.ok) {
+      router.push('/');
+    } else {
+      const data = await res.json();
+      alert(data.error || 'Login failed');
     }
-
-    // منطق تسجيل الدخول
-    console.log({ email, password });
-
-    router.push('/');
-  };
+  } catch {
+    alert('An error occurred');
+  }
+};
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-100">
