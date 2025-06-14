@@ -1,3 +1,4 @@
+import { jsonrepair } from 'jsonrepair';
 
 // export const Text = `Algeria is a large country located in North Africa. It is the biggest country on the African continent by land area, covering vast deserts, mountains, and a long Mediterranean coastline. The capital city of Algeria is Algiers, which is known for its beautiful architecture and vibrant culture. Algeria has a rich history that includes ancient civilizations, colonial times, and a strong fight for independence. The people of Algeria speak mainly Arabic and French, reflecting the country’s diverse cultural influences. Algeria’s landscape is very varied, with the Sahara Desert covering much of the southern part, while the northern region features mountain ranges and fertile coastal plains. The country is famous for its natural resources, especially oil and natural gas, which play a major role in its economy. Algerian culture is rich and diverse, with many traditions, music, and foods that reflect its long history and mix of peoples. The people are known to be friendly and welcoming. Algeria is a country full of beauty, history, and promise for the future.`;
 
@@ -99,49 +100,6 @@ export const Text = `Algeria: A Land of Diversity, History, and Promise Algeria,
 
 `;
 
-function safeParseQuizItems(rawText: string): QuizItem[] {
-  let quizItems: QuizItem[] = [];
-
-  try {
-    // محاولة تحليل النص كامل
-    const parsed = JSON.parse(rawText);
-    if (Array.isArray(parsed)) {
-      // تحقق من كل عنصر
-      quizItems = parsed.filter(isValidQuizItem);
-      return quizItems;
-    }
-  } catch {
-    // فشل التحليل الكامل، نحاول تفصيل العناصر
-  }
-
-  // حاول استخراج عناصر JSON فردية من النص
-  // إزالة الأقواس الخارجية للمصفوفة []
-  const itemStrings = rawText
-    .trim()
-    .replace(/^\[|\]$/g, '') // إزالة الأقواس الخارجية
-    .split(/},\s*{/g)         // فصل كل عنصر (تقريبي)
-    .map((s, i, arr) => {
-      // إعادة إضافة الأقواس الناقصة بعد الفصل
-      if (i === 0) return s + '}';
-      else if (i === arr.length - 1) return '{' + s;
-      else return '{' + s + '}';
-    });
-
-  for (const itemStr of itemStrings) {
-    try {
-      const obj = JSON.parse(itemStr);
-      if (isValidQuizItem(obj)) {
-        quizItems.push(obj);
-      } else {
-        console.warn('Invalid quiz item skipped:', obj);
-      }
-    } catch (err) {
-      console.warn('Failed to parse quiz item:', err);
-    }
-  }
-
-  return quizItems;
-}
 
 export async function generateQuiz(): Promise<QuizItem[]> {
   const apiKey = process.env.GROQ_API_KEY;
@@ -158,7 +116,7 @@ export async function generateQuiz(): Promise<QuizItem[]> {
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'llama3-70b-8192',
+      model: 'meta-llama/llama-4-maverick-17b-128e-instruct',
       messages: [
         { role: 'system', content: 'You are a CEFR English quiz generator.' },
         {
@@ -168,19 +126,19 @@ Given the following text:
 
 ${Text}
 
-Generate a JSON array of 40 multiple-choice questions for testing CEFR levels from A1 to C2.
-Each question must have:
-- "id" (number),  
-- "question" (string),  
-- "options" (array of 4 strings),  
-- "answer" (string),  
-- "level" (one of "A1", "A2", "B1", "B2", "C1", "C2").  
+Generate a JSON array of 40 multiple-choice questions to test CEFR levels from A1 to C2. Each question must have:
+- "id" (number)
+- "question" (string, use a variety of question types: what, who, when, where, why, how, true/false, fill in the blank, etc.)
+- "options" (array of strings: 4 options for normal questions, but ONLY 2 options ["True", "False"] for true/false questions)
+- "answer" (string, must match one of the options)
+- "level" (one of "A1", "A2", "B1", "B2", "C1", "C2")
 
-Only return a valid JSON array.
-          `,
+Make sure the questions are diverse in structure and style, not just "What is...". Include some questions that start with "Who", "When", "Where", "Why", "How", and some true/false or fill-in-the-blank style questions.  
+For true/false questions, the "options" array must be exactly ["True", "False"].
+Return only a valid JSON array, no explanations or extra text.         `,
         },
       ],
-      max_tokens: 3000,
+      max_tokens: 6000,
       temperature: 0.1,
     }),
   });
@@ -200,11 +158,21 @@ Only return a valid JSON array.
   }
 
   try {
-    // استخدام الدالة التي تتجاوز العناصر المعطوبة بدلاً من jsonrepair
-    const cleanQuizData = safeParseQuizItems(rawContent);
+    // أصلح الـ JSON قبل التحليل
+    const repaired = jsonrepair(rawContent);
+    const parsed = JSON.parse(repaired);
+    const cleanQuizData = filterValidQuizItems(parsed);
     return cleanQuizData;
   } catch (err) {
-    console.error('Failed to parse quiz items:', err);
+    console.error('Failed to repair/parse quiz items:', err);
     throw new Error('Invalid JSON returned by Groq');
   }
+}
+
+export async function getStaticProps() {
+  // Implementation for static props
+}
+
+export async function getServerSideProps() {
+  // Implementation for server-side props
 }

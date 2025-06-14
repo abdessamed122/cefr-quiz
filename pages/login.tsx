@@ -1,40 +1,44 @@
-
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Logo from '../components/Logo';
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
- const handleLogin = async () => {
-  if (!email || !password) {
-    alert('Please enter both email and password.');
-    return;
-  }
-
-  try {
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (res.ok) {
-      router.push('/');
-    } else {
-      const data = await res.json();
-      alert(data.error || 'Login failed');
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert('Please enter both email and password.');
+      return;
     }
-  } catch {
-    alert('An error occurred');
-  }
-};
+
+    setLoading(true);
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (res.ok) {
+        router.push('/');
+      } else {
+        const data = await res.json();
+        alert(data.error || 'Login failed');
+      }
+    } catch {
+      alert('An error occurred');
+    }
+    setLoading(false);
+  };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <Logo />
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
 
@@ -57,8 +61,9 @@ export default function LoginPage() {
         <button
           onClick={handleLogin}
           className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
+          disabled={loading}
         >
-          Login
+          {loading ? 'Logging in...' : 'Login'}
         </button>
       </div>
     </main>

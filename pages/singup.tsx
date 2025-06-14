@@ -63,6 +63,17 @@ const wilayas = [
   {"id":"57","code":"57","name":"In Salah"},
   {"id":"58","code":"58","name":"In Guezzam"}
 ];
+const languages = [
+  "English",
+  "francais",
+  "german",
+  "espanole"
+];
+
+const genders = [
+  "Male",
+  "Female"
+];
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -74,6 +85,8 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [gender, setGender] = useState('');
+  const [targetLanguage, setTargetLanguage] = useState('');
 
   const handleRegister = async () => {
     if (
@@ -83,22 +96,19 @@ export default function RegisterPage() {
       !birthPlace ||
       !email ||
       !phone ||
-      !password
+      !password ||
+      !gender ||
+      !targetLanguage
     ) {
       alert('Please fill all the fields.');
       return;
     }
 
-    // Registration logic here
-    console.log({
-      firstName,
-      lastName,
-      birthDate,
-      birthPlace,
-      email,
-      phone,
-      password,
-    });
+    // تحقق من وجود رمز الدولة في رقم الهاتف
+    if (!phone.startsWith('+')) {
+      alert('Please enter your phone number with the country code (e.g. +213...)');
+      return;
+    }
 
     const res = await fetch('/api/register', {
       method: 'POST',
@@ -113,6 +123,8 @@ export default function RegisterPage() {
         email,
         phone,
         password,
+        gender,
+        targetLanguage
       }),
     });
 
@@ -166,6 +178,28 @@ export default function RegisterPage() {
           ))}
         </select>
 
+        <select
+          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+        >
+          <option value="">Select Gender</option>
+          {genders.map((g) => (
+            <option key={g} value={g}>{g}</option>
+          ))}
+        </select>
+
+        <select
+          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={targetLanguage}
+          onChange={(e) => setTargetLanguage(e.target.value)}
+        >
+          <option value="">Select Target Language</option>
+          {languages.map((lang) => (
+            <option key={lang} value={lang}>{lang}</option>
+          ))}
+        </select>
+
         <input
           type="email"
           placeholder="Email"
@@ -176,7 +210,7 @@ export default function RegisterPage() {
 
         <input
           type="tel"
-          placeholder="Phone Number"
+          placeholder="Phone Number (e.g. +213600000000)"
           className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
