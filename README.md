@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 CEFR Quiz App
 
-## Getting Started
+An interactive CEFR-level multiple-choice quiz web application built with **React.js**. This app allows users to test their language proficiency through a series of questions categorized from **A1 to C2** levels, following the **Common European Framework of Reference for Languages (CEFR)**.
 
-First, run the development server:
+---
+
+## 🎯 Features
+
+- ✅ Multiple-choice quiz with instant feedback
+- 🎓 CEFR levels from A1 (Beginner) to C2 (Proficient)
+- 🔄 Randomized questions for each session
+- ⏱️ Timer to enhance challenge
+- 📱 Responsive design for mobile and desktop
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: React.js, HTML5, CSS3, JavaScript (ES6+)
+- **State Management**: React hooks (`useState`, `useEffect`)
+- **Data**: Local JSON file containing categorized quiz questions
+
+---
+
+## 📸 Screenshots
+
+### 🧪 Sample Question Interface
+![CEFR Quiz Sample Question](https://raw.githubusercontent.com/abdessamed122/cefr-quiz/main/screenshots/question-preview.png)
+
+### 🧾 Result Screen
+![CEFR Quiz Result](https://raw.githubusercontent.com/abdessamed122/cefr-quiz/main/screenshots/result-preview.png)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/abdessamed122/cefr-quiz.git
+cd cefr-quiz
