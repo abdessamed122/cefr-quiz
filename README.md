@@ -25,10 +25,10 @@ An interactive CEFR-level multiple-choice quiz web application built with **Reac
 ## 📸 Screenshots
 
 ### 🧪 Sample Question Interface
-![CEFR Quiz Sample Question](https://raw.githubusercontent.com/abdessamed122/cefr-quiz/main/screenshots/question-preview.png)
+<img width="949" alt="cefr2" src="https://github.com/user-attachments/assets/16f4a7fc-f8f6-4b03-b4de-44207dfa57a0" />
 
 ### 🧾 Result Screen
-![CEFR Quiz Result](https://raw.githubusercontent.com/abdessamed122/cefr-quiz/main/screenshots/result-preview.png)
+<img width="947" alt="cefr" src="https://github.com/user-attachments/assets/2f977160-280d-486c-95d9-c6ae3783d1da" />
 
 ---
 
