@@ -25,6 +25,8 @@ export default function LoginPage() {
       });
 
       if (res.ok) {
+        const data = await res.json();
+        localStorage.setItem('user', JSON.stringify(data.user));
         router.push('/');
       } else {
         const data = await res.json();
@@ -37,15 +39,20 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <Logo />
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-green-100 font-sans">
+      <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center">
+        <Logo />
+        <h1 className="text-3xl font-extrabold text-indigo-700 mb-2 font-serif tracking-tight drop-shadow">
+          Welcome Back
+        </h1>
+        <p className="text-gray-500 mb-6 text-center font-mono">
+          Sign in to your CEFR Quiz account
+        </p>
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-3 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-4 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -53,18 +60,31 @@ export default function LoginPage() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-3 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-6 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button
           onClick={handleLogin}
-          className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
+          className={`w-full py-3 rounded-lg font-bold text-lg shadow transition
+            ${loading
+              ? 'bg-indigo-300 cursor-not-allowed'
+              : 'bg-gradient-to-r from-indigo-600 to-green-500 hover:from-indigo-700 hover:to-green-600 text-white'}
+          `}
           disabled={loading}
         >
           {loading ? 'Logging in...' : 'Login'}
         </button>
+        <div className="mt-6 text-center">
+          <span className="text-gray-500 font-mono">Don&#39;t have an account?</span>
+          <button
+            className="ml-2 text-indigo-700 font-semibold hover:underline"
+            onClick={() => router.push('/singup')}
+          >
+            Sign up
+          </button>
+        </div>
       </div>
     </main>
   );

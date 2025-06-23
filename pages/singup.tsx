@@ -87,6 +87,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('');
   const [targetLanguage, setTargetLanguage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
     if (
@@ -104,12 +105,12 @@ export default function RegisterPage() {
       return;
     }
 
-    // تحقق من وجود رمز الدولة في رقم الهاتف
     if (!phone.startsWith('+')) {
       alert('Please enter your phone number with the country code (e.g. +213...)');
       return;
     }
 
+    setLoading(true);
     const res = await fetch('/api/register', {
       method: 'POST',
       headers: {
@@ -128,6 +129,8 @@ export default function RegisterPage() {
       }),
     });
 
+    setLoading(false);
+
     if (res.ok) {
       router.push('/login');
     } else {
@@ -137,73 +140,80 @@ export default function RegisterPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center mb-6">Register</h1>
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-green-100 font-sans">
+      <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-8">
+        <div className="flex flex-col items-center mb-6">
+          <img src="/logo.png" alt="Logo" className="h-14 mb-2" />
+          <h1 className="text-3xl font-extrabold text-indigo-700 mb-1 font-serif tracking-tight drop-shadow">Create Account</h1>
+          <p className="text-gray-500 mb-4 text-center font-mono">Join CEFR Quiz and start your language journey!</p>
+        </div>
 
-        <input
-          type="text"
-          placeholder="First Name"
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input
+            type="text"
+            placeholder="First Name"
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Last Name"
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input
+            type="date"
+            placeholder="Birth Date"
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={birthDate}
+            onChange={(e) => setBirthDate(e.target.value)}
+          />
+          <select
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={birthPlace}
+            onChange={(e) => setBirthPlace(e.target.value)}
+          >
+            <option value="">Select Birth Place</option>
+            {wilayas.map((w) => (
+              <option key={w.id} value={w.name}>
+                {w.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <input
-          type="date"
-          placeholder="Birth Date"
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={birthDate}
-          onChange={(e) => setBirthDate(e.target.value)}
-        />
-
-        <select
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={birthPlace}
-          onChange={(e) => setBirthPlace(e.target.value)}
-        >
-          <option value="">Select Birth Place</option>
-          {wilayas.map((w) => (
-            <option key={w.id} value={w.name}>
-              {w.name}
-            </option>
-          ))}
-        </select>
-
-        <select
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-        >
-          <option value="">Select Gender</option>
-          {genders.map((g) => (
-            <option key={g} value={g}>{g}</option>
-          ))}
-        </select>
-
-        <select
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={targetLanguage}
-          onChange={(e) => setTargetLanguage(e.target.value)}
-        >
-          <option value="">Select Target Language</option>
-          {languages.map((lang) => (
-            <option key={lang} value={lang}>{lang}</option>
-          ))}
-        </select>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <select
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            <option value="">Select Gender</option>
+            {genders.map((g) => (
+              <option key={g} value={g}>{g}</option>
+            ))}
+          </select>
+          <select
+            className="p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
+            value={targetLanguage}
+            onChange={(e) => setTargetLanguage(e.target.value)}
+          >
+            <option value="">Select Target Language</option>
+            {languages.map((lang) => (
+              <option key={lang} value={lang}>{lang}</option>
+            ))}
+          </select>
+        </div>
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-4 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -211,7 +221,7 @@ export default function RegisterPage() {
         <input
           type="tel"
           placeholder="Phone Number (e.g. +213600000000)"
-          className="w-full p-3 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-4 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
@@ -219,17 +229,31 @@ export default function RegisterPage() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-3 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 mb-6 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 font-mono"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button
           onClick={handleRegister}
-          className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
+          className={`w-full py-3 rounded-lg font-bold text-lg shadow transition
+            ${loading
+              ? 'bg-indigo-300 cursor-not-allowed'
+              : 'bg-gradient-to-r from-indigo-600 to-green-500 hover:from-indigo-700 hover:to-green-600 text-white'}
+          `}
+          disabled={loading}
         >
-          Register
+          {loading ? 'Registering...' : 'Register'}
         </button>
+        <div className="mt-6 text-center">
+          <span className="text-gray-500 font-mono">Already have an account?</span>
+          <button
+            className="ml-2 text-indigo-700 font-semibold hover:underline"
+            onClick={() => router.push('/login')}
+          >
+            Login
+          </button>
+        </div>
       </div>
     </main>
   );

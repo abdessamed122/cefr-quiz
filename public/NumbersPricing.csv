@@ -1,0 +1,106 @@
+ISO,Country,Phone Number Type,Phone Number Price / month,Inbound Voice Price / min,Inbound Trunking Price / min,Inbound SMS Price / msg,Inbound MMS Price / msg,Inbound Voice From Landline Price / min,Inbound Voice From Mobile Price / min,Inbound Trunking From Landline Price / min,Inbound Trunking From Mobile Price / min
+AR,Argentina,Local,8.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+AR,Argentina,Toll Free,25.00,0.23470,0.23070,N/A,N/A,N/A,N/A,N/A,N/A
+AT,Austria,Local,1.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+AT,Austria,Mobile,6.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+AT,Austria,National,1.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+AT,Austria,Toll Free,25.00,0.23250,0.22850,N/A,N/A,0.21840,0.24410,0.21440,0.24010
+AU,Australia,Local,3.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+AU,Australia,Mobile,6.50,0.01000,0.00600,0.00750,0.35000,N/A,N/A,N/A,N/A
+AU,Australia,Toll Free,16.00,0.05000,0.04600,N/A,N/A,N/A,N/A,N/A,N/A
+BB,Barbados,Local,27.00,0.02900,0.02500,N/A,N/A,N/A,N/A,N/A,N/A
+BE,Belgium,Toll Free,25.00,0.32370,0.31970,N/A,N/A,0.06340,0.32370,0.05940,0.31970
+BG,Bulgaria,Toll Free,110.00,0.20140,0.19740,N/A,N/A,N/A,N/A,N/A,N/A
+BJ,Benin,Mobile,27.00,0.12900,0.12500,N/A,N/A,N/A,N/A,N/A,N/A
+BR,Brazil,Local,4.25,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+BW,Botswana,Toll Free,50.00,0.44920,0.44520,N/A,N/A,N/A,N/A,N/A,N/A
+CA,Canada,Local,1.15,0.00850,0.00450,0.00830,N/A,N/A,N/A,N/A,N/A
+CA,Canada,Toll Free,2.15,0.02200,0.01300,0.00830,N/A,N/A,N/A,N/A,N/A
+CH,Switzerland,Local,1.15,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+CH,Switzerland,Mobile,9.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+CL,Chile,Local,7.00,0.01000,0.00600,0.02000,N/A,N/A,N/A,N/A,N/A
+CO,Colombia,Local,14.00,0.09000,0.08600,N/A,N/A,N/A,N/A,N/A,N/A
+CO,Colombia,Toll Free,25.00,0.17070,0.16670,N/A,N/A,N/A,N/A,N/A,N/A
+CZ,Czech Republic,Local,1.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+CZ,Czech Republic,Mobile,12.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+CZ,Czech Republic,National,1.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+CZ,Czech Republic,Toll Free,35.00,0.30220,0.29820,N/A,N/A,0.12810,0.30220,0.12410,0.29820
+DE,Germany,Local,1.15,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+DK,Denmark,Mobile,15.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+DZ,Algeria,Local,33.00,0.22400,0.22000,N/A,N/A,N/A,N/A,N/A,N/A
+EC,Ecuador,Local,34.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+EE,Estonia,Local,1.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+EE,Estonia,Mobile,3.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+EE,Estonia,National,1.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+EE,Estonia,Toll Free,38.00,0.49000,0.48600,N/A,N/A,N/A,N/A,N/A,N/A
+FI,Finland,Mobile,5.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+FI,Finland,Toll Free,40.00,0.29100,0.28700,N/A,N/A,0.18880,0.29100,0.18480,0.28700
+GB,Jersey,Mobile,1.15,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+GB,United Kingdom,Local,1.15,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+GB,United Kingdom,Mobile,1.15,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+GB,United Kingdom,National,1.15,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+GB,United Kingdom,Toll Free,2.15,0.06400,0.06000,N/A,N/A,0.05000,0.06400,0.04600,0.06000
+GD,Grenada,Local,27.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+GE,Georgia,Local,18.00,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+GH,Ghana,Mobile,27.00,0.12900,0.12500,N/A,N/A,N/A,N/A,N/A,N/A
+GN,Guinea,Mobile,27.00,0.12900,0.12500,N/A,N/A,N/A,N/A,N/A,N/A
+GR,Greece,Local,1.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+HK,Hong Kong,Mobile,15.00,N/A,N/A,0.04000,N/A,N/A,N/A,N/A,N/A
+HK,Hong Kong,National,6.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+HK,Hong Kong,Toll Free,25.00,0.06720,0.06320,N/A,N/A,N/A,N/A,N/A,N/A
+HR,Croatia,Local,5.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+HR,Croatia,Toll Free,19.00,0.31500,0.31100,N/A,N/A,N/A,N/A,N/A,N/A
+HU,Hungary,Mobile,35.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+ID,Indonesia,Local,23.00,0.02250,0.01850,N/A,N/A,N/A,N/A,N/A,N/A
+ID,Indonesia,Toll Free,25.00,0.31730,0.31330,N/A,N/A,N/A,N/A,N/A,N/A
+IE,Ireland,Local,1.60,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+IL,Israel,Local,4.25,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+IL,Israel,Mobile,15.00,0.03500,0.03100,0.00750,N/A,N/A,N/A,N/A,N/A
+IL,Israel,National,4.25,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+IL,Israel,Toll Free,15.00,0.13440,0.13040,N/A,N/A,N/A,N/A,N/A,N/A
+IT,Italy,Mobile,30.00,0.01000,0.00600,0.02000,N/A,N/A,N/A,N/A,N/A
+IT,Italy,Toll Free,25.00,0.43940,0.43540,N/A,N/A,0.03940,0.43940,0.03540,0.43540
+JP,Japan,Local,4.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+JP,Japan,National,4.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+JP,Japan,Toll Free,25.00,0.27800,0.27400,N/A,N/A,N/A,N/A,N/A,N/A
+KE,Kenya,Local,16.00,0.01180,0.00780,N/A,N/A,N/A,N/A,N/A,N/A
+LT,Lithuania,Mobile,4.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+MO,Macao,Mobile,70.00,0.26400,0.26000,N/A,N/A,N/A,N/A,N/A,N/A
+MX,Mexico,Local,6.25,0.01000,0.00600,0.02000,N/A,N/A,N/A,N/A,N/A
+MX,Mexico,Toll Free,30.00,0.21610,0.21210,N/A,N/A,N/A,N/A,N/A,N/A
+MY,Malaysia,Local,4.00,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+NA,Namibia,Local,33.00,0.38460,0.38060,N/A,N/A,N/A,N/A,N/A,N/A
+NL,Netherlands,Mobile,6.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+NZ,New Zealand,Local,3.15,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+NZ,New Zealand,Toll Free,40.00,0.24850,0.24450,N/A,N/A,0.06660,0.24850,0.06260,0.24450
+PA,Panama,Local,8.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+PE,Peru,Toll Free,135.00,0.39860,0.39460,N/A,N/A,N/A,N/A,N/A,N/A
+PH,Philippines,Local,15.00,0.22000,0.21600,N/A,N/A,N/A,N/A,N/A,N/A
+PH,Philippines,Mobile,120.00,N/A,N/A,0.02400,N/A,N/A,N/A,N/A,N/A
+PH,Philippines,Toll Free,25.00,0.41690,0.41290,N/A,N/A,0.36800,0.41690,0.36400,0.41290
+PL,Poland,Mobile,4.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+PL,Poland,Toll Free,20.00,0.15960,0.15560,N/A,N/A,0.11250,0.15960,0.10850,0.15560
+PR,Puerto Rico,Local,3.25,0.01000,0.00600,0.00830,N/A,N/A,N/A,N/A,N/A
+PT,Portugal,Mobile,15.00,N/A,N/A,0.04500,N/A,N/A,N/A,N/A,N/A
+RO,Romania,Local,3.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+RO,Romania,National,3.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+RO,Romania,Toll Free,25.00,0.19180,0.18780,N/A,N/A,0.11410,0.19180,0.11010,0.18780
+SD,Sudan,Local,130.00,0.33470,0.33070,N/A,N/A,N/A,N/A,N/A,N/A
+SE,Sweden,Mobile,3.00,N/A,N/A,0.00750,N/A,N/A,N/A,N/A,N/A
+SI,Slovenia,Local,5.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+SK,Slovakia,Toll Free,25.00,0.32890,0.32490,N/A,N/A,0.11510,0.32890,0.11110,0.32490
+SV,El Salvador,Local,9.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+TH,Thailand,Local,25.00,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+TH,Thailand,Mobile,22.00,0.01000,N/A,0.01000,N/A,N/A,N/A,N/A,N/A
+TH,Thailand,Toll Free,25.00,0.23770,0.23370,N/A,N/A,N/A,N/A,N/A,N/A
+TN,Tunisia,Local,120.00,0.76920,0.76520,N/A,N/A,N/A,N/A,N/A,N/A
+TN,Tunisia,National,120.00,0.76920,0.76520,N/A,N/A,N/A,N/A,N/A,N/A
+UG,Uganda,Local,40.00,0.12000,0.11600,N/A,N/A,N/A,N/A,N/A,N/A
+UG,Uganda,Toll Free,25.00,0.24210,0.23810,N/A,N/A,N/A,N/A,N/A,N/A
+US,United States,Local,1.15,0.00850,0.00340,0.00830,N/A,N/A,N/A,N/A,N/A
+US,United States,Toll Free,2.15,0.02200,0.01300,0.00830,N/A,N/A,N/A,N/A,N/A
+VE,Venezuela,Toll Free,60.00,0.32600,0.32200,N/A,N/A,N/A,N/A,N/A,N/A
+VI,"Virgin Islands, U.S.",Local,1.15,0.00850,0.00340,0.00830,N/A,N/A,N/A,N/A,N/A
+ZA,South Africa,Local,1.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
+ZA,South Africa,Mobile,4.00,0.01000,0.00600,0.00750,N/A,N/A,N/A,N/A,N/A
+ZA,South Africa,National,1.50,0.01000,0.00600,N/A,N/A,N/A,N/A,N/A,N/A
